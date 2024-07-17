@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Portfolio Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header, footer {
+            background-color: #4a90e2;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #4a90e2;
+        }
+        input, textarea, select {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        input[type="file"] {
+            padding: 3px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #357ABD;
+        }
+        .portfolio {
+            display: none;
+            margin-top: 20px;
+        }
+        .portfolio h2 {
+            margin-bottom: 0;
+            color: #4a90e2;
+        }
+        .portfolio img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .portfolio-template {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #f4f8fb;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        .template-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .template-content img {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+        .template-content h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .template-content p {
+            margin: 5px 0;
+        }
+        .template-section {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+        }
+        .template-section h4 {
+            margin: 5px 0;
+            color: #4a90e2;
+        }
+        .template-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .template-section ul li {
+            background: #e3f2fd;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Automatic Portfolio Generator</h1>
+</header>
+<div class="container">
+    <form id="portfolioForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="" placeholder="Prisha Hariharan" required>
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Enter your bio here..." required></textarea>
+        <label for="hobbies">Hobbies:</label>
+        <textarea id="hobbies" name="hobbies" rows="2" placeholder="Enter your hobbies here..." required></textarea>
+        <label for="skills">Skills:</label>
+        <textarea id="skills" name="skills" rows="2" placeholder="Enter your skills here..." required></textarea>
+        <label for="education">Educational Qualifications:</label>
+        <select id="education" name="education" required>
+            <option value="High School Diploma">High School Diploma</option>
+            <option value="Associate Degree">Associate Degree</option>
+            <option value="Bachelor's Degree">Bachelor's Degree</option>
+            <option value="Master's Degree">Master's Degree</option>
+            <option value="Doctorate">Doctorate</option>
+        </select>
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <label for="workSamples">Work Samples:</label>
+        <textarea id="workSamples" name="workSamples" rows="2" placeholder="Enter your work samples here..."></textarea>
+        <label for="accomplishments">Accomplishments:</label>
+        <textarea id="accomplishments" name="accomplishments" rows="2" placeholder="Enter your accomplishments here..."></textarea>
+        <label for="references">References or Testimonials:</label>
+        <textarea id="references" name="references" rows="2" placeholder="Enter your references or testimonials here..."></textarea>
+        <label for="communication">Communication:</label>
+        <textarea id="communication" name="communication" rows="2"placeholder="Enter your communication details here..."></textarea>
+        <label for="portfolioPerfect">Perfect Your Portfolio:</label>
+        <textarea id="portfolioPerfect" name="portfolioPerfect" rows="2" placeholder="Enter your portfolio perfecting details here..."></textarea>
+        <label for="transcripts">Transcripts:</label>
+        <textarea id="transcripts" name="transcripts" rows="2" placeholder="Enter your transcripts here..."></textarea>
+        <label for="bioInfo">Biographical Information:</label>
+        <textarea id="bioInfo" name="bioInfo" rows="2" placeholder="Enter your biographical information here..."></textarea>
+        <label for="careerSummary">Career Summary:</label>
+        <textarea id="careerSummary" name="careerSummary" rows="2" placeholder="Enter your career summary here..."></textarea>
+        <label for="certifications">Certifications:</label>
+        <input type="file" id="certifications" name="certifications" accept=".pdf,.doc,.docx">
+        <label for="philosophy">Philosophy Statement:</label>
+        <textarea id="philosophy" name="philosophy" rows="2" placeholder="Enter your philosophy statement here..."></textarea>
+        <label for="volunteering">Volunteering:</label>
+        <textarea id="volunteering" name="volunteering" rows="2"placeholder="Enter your volunteering details here..."></textarea>
+        <label for="articles">Articles:</label>
+        <textarea id="articles" name="articles" rows="2" placeholder="Enter your articles here..."></textarea>
+        <label for="careerGoals">Career Goals:</label>
+        <textarea id="careerGoals" name="careerGoals" rows="2"placeholder="Enter your career goals here..."></textarea>
+        <label for="introduction">Introduction:</label>
+        <textarea id="introduction" name="introduction" rows="2" placeholder="Enter your introduction here..."></textarea>
+        <label for="professionalDevelopment">Professional Development:</label>
+        <textarea id="professionalDevelopment" name="professionalDevelopment" rows="2" placeholder="Enter your professional development details here..."></textarea>
+        <label for="worksInProgress">Works in Progress:</label>
+        <textarea id="worksInProgress" name="worksInProgress" rows="2" placeholder="Enter your works in progress here..."></textarea>
+        <label for="awards">Awards:</label>
+        <textarea id="awards" name="awards" rows="2" placeholder="Enter your awards here..."></textarea>
+        <label for="caseStudies">Case Studies:</label>
+        <textarea id="caseStudies" name="caseStudies" rows="2" placeholder="Enter your case studies here..."></textarea>
+        <label for="professionalExperience">Professional Experience:</label>
+        <textarea id="professionalExperience" name="professionalExperience" rows="2" placeholder="Enter your professional experience here..."></textarea>
+        <label for="portfolioRequirements">Follow the Portfolio Requirements:</label>
+        <textarea id="portfolioRequirements" name="portfolioRequirements" rows="2" placeholder="Enter your portfolio requirements here..."></textarea>
+        <label for="honors">Honors:</label>
+        <textarea id="honors" name="honors" rows="2" placeholder="Enter your honors here..."></textarea>
+        <label for="courseRequirements">Knowledge of Course Requirements:</label>
+        <textarea id="courseRequirements" name="courseRequirements" rows="2" placeholder="Enter your knowledge of course requirements here..."></textarea>
+        <button type="submit">Generate Portfolio</button>
+    </form>
+    <div class="portfolio" id="portfolio">
+        <h2>Generated Portfolios for <span id="portfolioName">Prisha Hariharan</span></h2>
+        <div id="template1" class="portfolio-template">
+            <h3>Template 1</h3>
+            <div class="template-content">
+                <img id="template1Img" src="" alt="Portfolio Image">
+                <h3 id="template1Name">Prisha Hariharan</h3>
+                <p id="template1Bio">Bio goes here...</p>
+                <div class="template-section">
+                    <h4>Hobbies</h4>
+                    <ul id="template1Hobbies"></ul>
+                </div>
+                <div class="template-section">
+                    <h4>Skills</h4>
+                    <ul id="template1Skills"></ul>
+                </div>
+                <div class="template-section">
+                    <h4>Educational Qualifications</h4>
+                    <ul id="template1Education"></ul>
+                </div>
+                <div id="template1AdditionalSections"></div>
+            </div>
+            <button type="button" id="downloadTemplate1">Download Template 1</button>
+        </div>
+        <div id="template2" class="portfolio-template">
+            <h3>Template 2</h3>
+            <div class="template-content">
+                <img id="template2Img" src="" alt="Portfolio Image">
+                <h3 id="template2Name">Prisha Hariharan</h3>
+                <p id="template2Bio">Bio goes here...</p>
+                <div class="template-section">
+                    <h4>Hobbies</h4>
+                    <ul id="template2Hobbies"></ul>
+                </div>
+                <div class="template-section">
+                    <h4>Skills</h4>
+                    <ul id="template2Skills"></ul>
+                </div>
+                <div class="template-section">
+                    <h4>Educational Qualifications</h4>
+                    <ul id="template2Education"></ul>
+                </div>
+                <div id="template2AdditionalSections"></div>
+            </div>
+            <button type="button" id="downloadTemplate2">Download Template 2</button>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 Automatic Portfolio Generator | Hariharan V</p>
+</footer>
+<script>
+    document.getElementById('portfolioForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const bio = document.getElementById('bio').value;
+        const hobbies = document.getElementById('hobbies').value.split(',');
+        const skills = document.getElementById('skills').value.split(',');
+        const education = document.getElementById('education').value;
+        const additionalSections = {
+            workSamples: document.getElementById('workSamples').value,
+            accomplishments: document.getElementById('accomplishments').value,
+            references: document.getElementById('references').value,
+            communication: document.getElementById('communication').value,
+            portfolioPerfect: document.getElementById('portfolioPerfect').value,
+            transcripts: document.getElementById('transcripts').value,
+            bioInfo: document.getElementById('bioInfo').value,
+            careerSummary: document.getElementById('careerSummary').value,
+            philosophy: document.getElementById('philosophy').value,
+            volunteering: document.getElementById('volunteering').value,
+            articles: document.getElementById('articles').value,
+            careerGoals: document.getElementById('careerGoals').value,
+            introduction: document.getElementById('introduction').value,
+            professionalDevelopment: document.getElementById('professionalDevelopment').value,
+            worksInProgress: document.getElementById('worksInProgress').value,
+            awards: document.getElementById('awards').value,
+            caseStudies: document.getElementById('caseStudies').value,
+            professionalExperience: document.getElementById('professionalExperience').value,
+            portfolioRequirements: document.getElementById('portfolioRequirements').value,
+            honors: document.getElementById('honors').value,
+            courseRequirements: document.getElementById('courseRequirements').value
+        };
+        const imageInput = document.getElementById('image');
+        const imageFile = imageInput.files[0];
+        if (imageFile) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageDataUrl = e.target.result;
+                document.getElementById('portfolioName').innerText = name;
+                // Template 1
+                document.getElementById('template1Img').src = imageDataUrl;
+                document.getElementById('template1Name').innerText = name;
+                document.getElementById('template1Bio').innerText = bio;
+                populateList('template1Hobbies', hobbies);
+                populateList('template1Skills', skills);
+                populateList('template1Education', [education]);
+                populateAdditionalSections('template1AdditionalSections', additionalSections);
+                // Template 2
+                document.getElementById('template2Img').src = imageDataUrl;
+                document.getElementById('template2Name').innerText = name;
+                document.getElementById('template2Bio').innerText = bio;
+                populateList('template2Hobbies', hobbies);
+                populateList('template2Skills', skills);
+                populateList('template2Education', [education]);
+                populateAdditionalSections('template2AdditionalSections', additionalSections);
+                document.getElementById('portfolio').style.display = 'block';
+            };
+            reader.readAsDataURL(imageFile);
+        }
+    });
+    document.getElementById('downloadTemplate1').addEventListener('click', function() {
+        downloadTemplate('template1');
+    });
+    document.getElementById('downloadTemplate2').addEventListener('click', function() {
+        downloadTemplate('template2');
+    });
+    function downloadTemplate(templateId) {
+        const template = document.getElementById(templateId);
+        const htmlContent = template.innerHTML;
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = url;
+        a.download = `${templateId}.html`;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }, 0);
+    }
+    function populateList(elementId, items) {
+        const listElement = document.getElementById(elementId);
+        listElement.innerHTML = '';
+        items.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = item.trim();
+            listElement.appendChild(listItem);
+        });
+    }
+    function populateAdditionalSections(elementId, sections) {
+        const container = document.getElementById(elementId);
+        container.innerHTML = '';
+        for (const [key, value] of Object.entries(sections)) {
+            if (value.trim() !== '') {
+                const sectionElement = document.createElement('div');
+                sectionElement.className = 'template-section';
+                sectionElement.innerHTML = `<h4>${formatSectionTitle(key)}</h4><ul><li>${value}</li></ul>`;
+                container.appendChild(sectionElement);
+            }
+        }
+    }
+    function formatSectionTitle(key) {
+        return key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+    }
+</script>
+</body>
+</html>
