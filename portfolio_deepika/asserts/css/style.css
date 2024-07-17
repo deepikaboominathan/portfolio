@@ -1,0 +1,121 @@
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: "PT Serif", serif;
+}
+
+#navbar{
+    position:sticky;
+    top: 0;
+    left: 0;
+    z-index:100;
+    padding: .5rem 5rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    background: black;
+}
+
+.navbar .navbar-brand{
+    font-size: 25px;
+    font-weight: 800;
+    color: lightblue !important;
+}
+
+#navbarSupportedContent a{
+    color:white;
+    border-bottom:2px solid transparent;
+}
+
+#navbarSupportedContent a:hover{
+    border-bottom:2px solid lightblue;
+}
+
+#navbarSupportedContent button{
+    background: lightblue;
+    width:5rem;
+    border-radius: 15px;
+}
+
+/***Home***/
+
+#home{
+    background:url(../assets/pexels-andrew-beatson-2114196-3742711.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 300px;
+}
+
+#home h1{
+    font-size: 50px;
+    color:rgb(0, 0, 0) ;
+    letter-spacing: 3px;
+    text-shadow:0px 1px 0px #000000;
+    text-align: center;
+}
+#home h3{
+    font-size:18px;
+    color:#000000;
+    text-align: center;
+}
+
+#home .input-group{
+  width:40%;
+  height:45px; 
+  /* margin-right: auto;
+  margin-left: auto;  */
+}
+.signin{
+    background: rgb(71, 94, 222) !important;
+    color: white !important;
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.3);
+}
+
+/***About***/
+
+#about{
+    background: #959599;
+    padding:100px;
+}
+#about h2{
+    font-weight: 800;
+    font-size: 50px;
+    color: black;
+}
+#about p{
+    color: black;
+}
+
+#about img{
+    border-radius: 50%;
+    padding: 10px 20px 20px 10px;
+}
+
+/**Climate**/
+
+#climate img{
+    border-radius: 50%;
+    padding: 10px 20px 20px 10px;
+}
+#climate h1{
+    text-align: center;
+    padding: 20px;
+}
+#climate{
+    background-color:#6c6c6e ;
+    color: #000000;
+}
+#climate img:hover{
+    opacity: 0.3;
+}
+
+/****News***/
+
+#news{
+    background: #b3b3c1;
+    padding:100px;
+    color: #000000;
+}
+#news h2{
+    text-align: center;
+}

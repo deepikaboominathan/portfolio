@@ -1,0 +1,34 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #73726e;
+}
+.hero {
+    background-image: url('https://source.unsplash.com/1600x900/?nature,environment');
+    background-size: cover;
+    color: black;
+    text-align: center;
+    padding: 100px 0;
+}
+.hero .email-input {
+    width: 400px; /* Set the width to your desired size */
+    padding: 8px; /* Adjust padding as needed */
+}
+
+.section {
+    padding: 60px 20px;
+}
+.footer {
+    background-color:#333;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+}
+.carousel-item {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}

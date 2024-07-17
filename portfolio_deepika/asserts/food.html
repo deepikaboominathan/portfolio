@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Delivery Service</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/c41e36d66d.js" crossorigin="anonymous"></script>
+</head>
+<center>
+<img src="https://static.vecteezy.com/system/resources/thumbnails/011/828/446/small/ad-letter-logo-design-creative-modern-trendy-typography-concept-vector.jpg" alt="no image" height="100px" width="100px"/>
+</center>
+<body>
+    <header>
+        <h1>Welcome to Our Online Delivery Service</h1>
+    </header>
+    <div class="container">
+        <h2><center>Available Products</center></h2>
+        <div id="products">
+            <div class="product">
+                <h3>Product 1</h3>
+                <a href="./image.html" target="_blank"><center>click</center>
+                    <center>
+                <img src="https://i.insider.com/58beb605dd0895df4b8b48f7?width=800&format=jpeg&auto=webp" alt="Product 1" width="200"></a>
+            </center>
+                <p>Price:  ₹120</p>
+            </div>
+            <div class="product">
+                <h3>Product 2</h3>
+                <a href="./images (2).jpg" target="_blank"> <center>click</center>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTufT385P2L163SdHHKv-mXt5QLso4rg9szruyub5Ka5uxvprdhHIH-26IkL9WOPlh4z5w&usqp=CAU" alt="Product 2" width="200"></a>
+                <p>Price: ₹120</p>           
+             </div>
+            <div class="product">
+                <h3>Product 3</h3>
+                <a href="./images (3).jpg" target="_blank"><center>click</center>
+                <img src="https://b.zmtcdn.com/data/pictures/4/18949064/0c18afa2949493c27ddd432f73ad86bb.jpg?fit=around|750:500&crop=750:500;*,*" alt="Product 3" width="200"></a>
+                <br>
+                <p>Price: ₹130</p>
+            </div>
+        </div>    
+        <h2>Place Your Order</h2>
+        <form action="submit_order.php" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address" required><br><br>
+            <label for="product">Select Product:</label><br>
+            <select id="product" name="product" required>
+                <option value="product1">Product 1</option>
+                <option value="product2">Product 2</option>
+                <option value="product3">Product 3</option>
+            </select><br><br>
+            <label for="quantity">Quantity:</label><br>
+            <input type="number" id="quantity" name="quantity" required><br></br>
+            <input type="submit" value="Submit Order">
+        </form>
+    </div>
+    <footer>
+        <a href="https://github.com/" target="_blank">
+        <i class="fa-brands fa-github icon"></i></a>
+        <a href="https://www.instagram.com/" target="_blank">
+        <i class="fa-brands fa-instagram icon"></i></a>
+        <p>2024 Online Delivery Service</p>
+    </footer>
+</body>
+</html>
